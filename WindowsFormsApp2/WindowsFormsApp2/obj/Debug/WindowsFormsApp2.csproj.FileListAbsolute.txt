@@ -1,0 +1,16 @@
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe.config
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.exe
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\bin\Debug\WindowsFormsApp2.pdb
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csprojAssemblyReference.cache
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.AnaSayfa.resources
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.MüşteriEkle.resources
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Properties.Resources.resources
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.GenerateResource.cache
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.MüşteriListele.resources
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.AtListele.resources
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.EğitmenListele.resources
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.PaketListele.resources
+C:\Users\LENOVO\source\repos\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.ÜcretListele.resources
