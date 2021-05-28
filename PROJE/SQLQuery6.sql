@@ -1,60 +1,60 @@
 -----------------------------------------------------------------------------------------------
---4. Insert, update, delete deyimlerine örnekler
+--Insert, update, delete deyimlerine Ã¶rnekler
 
-insert into Müşteriler values (111,'Sinem','Yılmaz',05411123456,'1995-03-09',22132)
---Müşteriler tablosuna yeni bir kayıt ekleme
+insert into MÃ¼ÅŸteriler values (111,'Sinem','YÄ±lmaz',05411123456,'1995-03-09',22132)
+--MÃ¼ÅŸteriler tablosuna yeni bir kayÄ±t ekleme
 
-insert into Müşteriler values (112,'Başak','Demir',05411123456,'1995-03-11',11111)
---Müşteriler tablosuna yeni bir kayıt ekleme
+insert into MÃ¼ÅŸteriler values (112,'BaÅŸak','Demir',05411123456,'1995-03-11',11111)
+--MÃ¼ÅŸteriler tablosuna yeni bir kayÄ±t ekleme
 
-update Üyelik set Satıldı='evet' where PaketId=22132
---Yeni kayıt olan kişinin paketini satıldı olarak belirtme
+update Ãœyelik set SatÄ±ldÄ±='evet' where PaketId=22132
+--Yeni kayÄ±t olan kiÅŸinin paketini satÄ±ldÄ± olarak belirtme
 
-update Üyelik set Satıldı='evet' where PaketId=11111
---Yeni kayıt olan kişinin paketini satıldı olarak belirtme
+update Ãœyelik set SatÄ±ldÄ±='evet' where PaketId=11111
+--Yeni kayÄ±t olan kiÅŸinin paketini satÄ±ldÄ± olarak belirtme
 
-delete from Müşteriler where MüşteriId=112
---Müşteriler tablosundan kayıt silme
+delete from MÃ¼ÅŸteriler where MÃ¼ÅŸteriId=112
+--MÃ¼ÅŸteriler tablosundan kayÄ±t silme
 
-update Üyelik set Satıldı=NULL where PaketId=11111
---Silinen Kayıdın sahip olduğu paketid'nin satıldı değeri değiştirildi
+update Ãœyelik set SatÄ±ldÄ±=NULL where PaketId=11111
+--Silinen KayÄ±dÄ±n sahip olduÄŸu paketid'nin satÄ±ldÄ± deÄŸeri deÄŸiÅŸtirildi
 
-insert into Üyelik values (44151,4,4,15,2,NULL)
---Üyelik tablosuna yeni paket kaydı ekleme
+insert into Ãœyelik values (44151,4,4,15,2,NULL)
+--Ãœyelik tablosuna yeni paket kaydÄ± ekleme
 
------------------------------------------------------------------------------------------------
---5. Select deyimleri ve gruplama fonsksiyonları (min, max, avg, count gibi) ile ilgili 
---veritabanıza ait anlamlı sorusu ve cevabını içeren en az 10 sorgu
+----------------------------------------------------------------------------------------------
+-- Select deyimleri ve gruplama fonsksiyonlarÄ± (min, max, avg, count gibi) ile ilgili 
+--veritabanÄ±za ait anlamlÄ± sorusu ve cevabÄ±nÄ± iÃ§eren en az 10 sorgu
 
-select gün from Ücretlendirme where Ücret between 50 and 100
---ücreti 50 ile 100 lira arasında olan günler
+select gÃ¼n from Ãœcretlendirme where Ãœcret between 50 and 100
+--Ã¼creti 50 ile 100 lira arasÄ±nda olan gÃ¼nler
 
-select distinct Manej from Üyelik
---kaç farklı manej olduğunu gösteren sorgu
+select distinct Manej from Ãœyelik
+--kaÃ§ farklÄ± manej olduÄŸunu gÃ¶steren sorgu
 
-select Ad,upper(Soyad),DoğumTarihi from Müşteriler where year(DoğumTarihi)<1990 order by DoğumTarihi asc
---Müşteriler tablosunda doğum tarihi 1990'dan küçük olan kayıtlar
+select Ad,upper(Soyad),DoÄŸumTarihi from MÃ¼ÅŸteriler where year(DoÄŸumTarihi)<1990 order by DoÄŸumTarihi asc
+--MÃ¼ÅŸteriler tablosunda doÄŸum tarihi 1990'dan kÃ¼Ã§Ã¼k olan kayÄ±tlar
 
-select top 20 percent PaketId from Üyelik where Satıldı is NULL
---Satın alınabilecek paketlerden %20'sini gösteren sorgu
+select top 20 percent PaketId from Ãœyelik where SatÄ±ldÄ± is NULL
+--SatÄ±n alÄ±nabilecek paketlerden %20'sini gÃ¶steren sorgu
 
-select * from Üyelik where Satıldı is Null and PaketId like '_2___'
---Salı günü için satın alınabilecek paketler
+select * from Ãœyelik where SatÄ±ldÄ± is Null and PaketId like '_2___'
+--SalÄ± gÃ¼nÃ¼ iÃ§in satÄ±n alÄ±nabilecek paketler
 
-select * from Üyelik where Satıldı is Null and Manej=2
---2. manej için satın alınabilecek paketler
+select * from Ãœyelik where SatÄ±ldÄ± is Null and Manej=2
+--2. manej iÃ§in satÄ±n alÄ±nabilecek paketler
 
-select * from Üyelik where Satıldı is Null and DersSaati in(13,14,15)
---Ders saati 13 14 ya da 15 olan satın alınabilecek paketler
+select * from Ãœyelik where SatÄ±ldÄ± is Null and DersSaati in(13,14,15)
+--Ders saati 13 14 ya da 15 olan satÄ±n alÄ±nabilecek paketler
 
-select count(*)*100 as [haftaiçi kazanç] from Üyelik where gün<=5 and Satıldı='evet'
---Haftaiçi satılan paketler üzerinden elde edilen kar
+select count(*)*100 as [haftaiÃ§i kazanÃ§] from Ãœyelik where gÃ¼n<=5 and SatÄ±ldÄ±='evet'
+--HaftaiÃ§i satÄ±lan paketler Ã¼zerinden elde edilen kar
 
-select (year(getdate())-min(year(DoğumTarihi))) as [En Büyük Üyenin Yaşı] from Müşteriler 
---En büyük üyenin yaşı
+select (year(getdate())-min(year(DoÄŸumTarihi))) as [En BÃ¼yÃ¼k Ãœyenin YaÅŸÄ±] from MÃ¼ÅŸteriler 
+--En bÃ¼yÃ¼k Ã¼yenin yaÅŸÄ±
 
-select max(DersSaati) from Üyelik 
---En geç ders alınabilecek saat
+select max(DersSaati) from Ãœyelik 
+--En geÃ§ ders alÄ±nabilecek saat
 
-select avg(Ücret) as [Ortalama Fiyat] from Ücretlendirme
---Ortalama bir paketin fiyatı
+select avg(Ãœcret) as [Ortalama Fiyat] from Ãœcretlendirme
+--Ortalama bir paketin fiyatÄ±
