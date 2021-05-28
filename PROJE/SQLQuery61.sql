@@ -1,23 +1,24 @@
-select Ad,Soyad,DersSaati from Müşteriler m inner join Üyelik  ü on m.PaketId=ü.PaketId where Gün=2 order by DersSaati
---Salı günü dersi olan üyelerin isimleri ve ders saatleri
+select Ad,Soyad,DersSaati from MÃ¼ÅŸteriler m inner join Ãœyelik  Ã¼ on m.PaketId=Ã¼.PaketId where GÃ¼n=2 order by DersSaati
+--SalÄ± gÃ¼nÃ¼ dersi olan Ã¼yelerin isimleri ve ders saatleri
 
-select m.Ad + '' +m.Soyad as Müşteri,e.Ad + '' + e.Soyad as [Eğitmen],DersSaati from Müşteriler m 
-inner join Üyelik  ü on m.PaketId=ü.PaketId inner join Eğitmenler e on ü.EğitmenId=e.EğitmenId where gün=5
---Cuma günü dersi olan üyelerin isimleri ve o üyelere ait eğitmenlerin isimleri
+select m.Ad + '' +m.Soyad as MÃ¼ÅŸteri,e.Ad + '' + e.Soyad as [EÄŸitmen],DersSaati from MÃ¼ÅŸteriler m 
+inner join Ãœyelik  Ã¼ on m.PaketId=Ã¼.PaketId inner join EÄŸitmenler e on Ã¼.EÄŸitmenId=e.EÄŸitmenId where gÃ¼n=5
+--Cuma gÃ¼nÃ¼ dersi olan Ã¼yelerin isimleri ve o Ã¼yelere ait eÄŸitmenlerin isimleri
 
-select * from Müşteriler where PaketId in(select PaketId from Üyelik ü 
-inner join Atlar a on ü.EğitmenId=a.AtId where a.Ad='Gece')
---Gece adlı atla ders yapan müşteri bilgileri
+select * from MÃ¼ÅŸteriler where PaketId in(select PaketId from Ãœyelik Ã¼ 
+inner join Atlar a on Ã¼.EÄŸitmenId=a.AtId where a.Ad='Gece')
+--Gece adlÄ± atla ders yapan mÃ¼ÅŸteri bilgileri
 
-select e.EğitmenId,e.Ad + e.Soyad as Eğitmen,a.Ad, count(*) as [Toplam Ders Saati],Satıldı as [Satıldı mı?] from Üyelik ü inner join Eğitmenler e 
-on e.EğitmenId=ü.EğitmenId inner join Atlar a on a.AtId=e.EğitmenId group by e.EğitmenId,Satıldı,e.Ad,e.Soyad,a.Ad having Satıldı is not null
---Satılan paketlere göre her eğitmenin hangi atla toplam kaç saat ders verdiği
+select e.EÄŸitmenId,e.Ad + e.Soyad as EÄŸitmen,a.Ad, count(*) as [Toplam Ders Saati],SatÄ±ldÄ± as [SatÄ±ldÄ± mÄ±?] from Ãœyelik Ã¼ inner join EÄŸitmenler e 
+on e.EÄŸitmenId=Ã¼.EÄŸitmenId inner join Atlar a on a.AtId=e.EÄŸitmenId group by e.EÄŸitmenId,SatÄ±ldÄ±,e.Ad,e.Soyad,a.Ad having SatÄ±ldÄ± is not null
+--SatÄ±lan paketlere gÃ¶re her eÄŸitmenin hangi atla toplam kaÃ§ saat ders verdiÄŸi
 
-select gün,min(DersSaati) as [en erken],e.Ad from Üyelik ü inner join Eğitmenler e on e.EğitmenId=ü.EğitmenId 
-where Satıldı is null group by gün,e.Ad order by gün,e.Ad
---Paket satın almak isteyen biri eğitmenlerin programlarına göre en erken saate alabilecekleri paketleri gösteren sorgu
+select gÃ¼n,min(DersSaati) as [en erken],e.Ad from Ãœyelik Ã¼ inner join EÄŸitmenler e on e.EÄŸitmenId=Ã¼.EÄŸitmenId 
+where SatÄ±ldÄ± is null group by gÃ¼n,e.Ad order by gÃ¼n,e.Ad
+--Paket satÄ±n almak isteyen biri eÄŸitmenlerin programlarÄ±na gÃ¶re en erken saate alabilecekleri paketleri gÃ¶steren sorgu
 
-select AtId,Ad,count(*)*100 as [haftaiçi kazanç] from Üyelik ü inner join Atlar a on ü.EğitmenId=a.AtId 
-where Satıldı is not null and gün<=5 group by AtId,Ad
---Haftaiçi verilen derslerde atların kullanımına göre kazanç
+select AtId,Ad,count(*)*100 as [haftaiÃ§i kazanÃ§] from Ãœyelik Ã¼ inner join Atlar a on Ã¼.EÄŸitmenId=a.AtId 
+where SatÄ±ldÄ± is not null and gÃ¼n<=5 group by AtId,Ad
+--HaftaiÃ§i verilen derslerde atlarÄ±n kullanÄ±mÄ±na gÃ¶re kazanÃ§
+
 
