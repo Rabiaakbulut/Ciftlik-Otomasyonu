@@ -6,9 +6,9 @@ Irk CHAR(20),
 Cinsiyet CHAR(10)
 );
 
-CREATE TABLE Eðitmenler
+CREATE TABLE EÄŸitmenler
 (
-[Eðitmen Id] INTEGER CONSTRAINT [Eðitmen Id] PRIMARY KEY,
+[EÄŸitmen Id] INTEGER CONSTRAINT [EÄŸitmen Id] PRIMARY KEY,
 Ad CHAR(20) NOT NULL,
 Soyad CHAR(20) NOT NULL,
 Telefon char(11) NOT NULL,
@@ -16,34 +16,34 @@ Telefon char(11) NOT NULL,
 CONSTRAINT AtYA FOREIGN KEY ([At Id]) REFERENCES Atlar ([At Id]),
 );
 
-CREATE TABLE Ücretlendirme
+CREATE TABLE Ãœcretlendirme
 (
-Gün INTEGER CONSTRAINT Gün PRIMARY KEY,
-Ücret MONEY
+GÃ¼n INTEGER CONSTRAINT GÃ¼n PRIMARY KEY,
+Ãœcret MONEY
 );
 
-CREATE TABLE Üyelik
+CREATE TABLE Ãœyelik
 (
 [Paket Id] INTEGER CONSTRAINT [Paket Id] PRIMARY KEY,
 
-[Eðitmen Id] INTEGER NOT NULL,
-CONSTRAINT EðitIdYA FOREIGN KEY ([Eðitmen Id]) REFERENCES Eðitmenler ([Eðitmen Id]),
+[EÄŸitmen Id] INTEGER NOT NULL,
+CONSTRAINT EÄŸitIdYA FOREIGN KEY ([EÄŸitmen Id]) REFERENCES EÄŸitmenler ([EÄŸitmen Id]),
 
-Gün INTEGER NOT NULL,
-CONSTRAINT GünYA FOREIGN KEY (Gün) REFERENCES Ücretlendirme (Gün),
+GÃ¼n INTEGER NOT NULL,
+CONSTRAINT GÃ¼nYA FOREIGN KEY (GÃ¼n) REFERENCES Ãœcretlendirme (GÃ¼n),
 
 [Ders Saati] INTEGER NOT NULL,
 Manej CHAR(1),
-Satýldý CHAR(5)
+SatÄ±ldÄ± CHAR(5)
 );
 
-CREATE TABLE Müþteriler
+CREATE TABLE MÃ¼ÅŸteriler
 (
-[Müþteri Id] INTEGER CONSTRAINT [Müþteri Id] PRIMARY KEY ,
+[MÃ¼ÅŸteri Id] INTEGER CONSTRAINT [MÃ¼ÅŸteri Id] PRIMARY KEY ,
 Ad CHAR(20) NOT NULL,
 Soyad CHAR(20) NOT NULL,
 Telefon char(11) NOT NULL,
-[Doðum Tarihi] Date,
+[DoÄŸum Tarihi] Date,
 [Paket Id] INTEGER NOT NULL,
-CONSTRAINT PaketYA FOREIGN KEY ([Paket Id]) REFERENCES Üyelik ([Paket Id]),
+CONSTRAINT PaketYA FOREIGN KEY ([Paket Id]) REFERENCES Ãœyelik ([Paket Id]),
 );
