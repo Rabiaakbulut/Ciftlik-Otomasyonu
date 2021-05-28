@@ -1,3 +1,0 @@
-SQLQuery17.sql -> Tablo oluşturulması
-SQLQuery61.sql -> inner join
-SQLQuery6.sql  -> Insert, update, delete, select deyimleri ve gruplama fonsksiyonları (min, max, avg, count gibi) ile ilgili sorgular
