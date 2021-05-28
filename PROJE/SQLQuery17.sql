@@ -47,3 +47,4 @@ Telefon char(11) NOT NULL,
 [Paket Id] INTEGER NOT NULL,
 CONSTRAINT PaketYA FOREIGN KEY ([Paket Id]) REFERENCES Üyelik ([Paket Id]),
 );
+
