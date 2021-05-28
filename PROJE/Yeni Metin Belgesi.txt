@@ -1,3 +1,0 @@
-SQLQuery17.sql -> Tablo oluşturulması
-SQLQuery61.sql -> inner join sorusu
-SQLQuery6.sql  -> soru 4-5
